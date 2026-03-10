@@ -253,3 +253,47 @@ with col2:
 with st.expander("Diagnostics"):
     st.write("Loaded rows:", len(df))
     st.write("Columns:", list(df.columns))
+
+# ------------------------------------------------------------
+# 6) Plotting
+# ------------------------------------------------------------
+st.subheader("Quick plot")
+
+plot_choice = st.selectbox(
+    "Choose a plot",
+    [
+        "Items per group",
+        "Items per publication date",
+    ],
+)
+
+if plot_choice == "Items per group":
+    plot_df = (
+        filtered["group_name"]
+        .fillna("Unknown")
+        .value_counts()
+        .rename_axis("group_name")
+        .reset_index(name="count")
+    )
+
+    st.write("Number of items per affiliation/group")
+    st.bar_chart(plot_df.set_index("group_name"))
+
+elif plot_choice == "Items per publication date":
+    date_plot_df = filtered.dropna(subset=["published_date"]).copy()
+
+    if date_plot_df.empty:
+        st.info("No publication dates available for plotting.")
+    else:
+        date_plot_df["published_day"] = date_plot_df["published_date"].dt.date
+
+        counts_by_day = (
+            date_plot_df["published_day"]
+            .value_counts()
+            .sort_index()
+            .rename_axis("published_day")
+            .reset_index(name="count")
+        )
+
+        st.write("Number of items per publication date")
+        st.bar_chart(counts_by_day.set_index("published_day"))
