@@ -1,6 +1,6 @@
 # Dasboard monitoring datasets in 4TU.ResearchData
 
-Welcome to the workshop **Building a minimal dashboard to monitor datasets using 4TU.ResearchData API**! for data support staff from University of Twente, on March 10th, 2026.  
+Welcome to the workshop **Building a minimal dashboard to monitor datasets using 4TU.ResearchData API**! for data support staff from University of Twente, on March 17th, 2026.  
 
 
 
@@ -11,10 +11,6 @@ Welcome to the workshop **Building a minimal dashboard to monitor datasets using
 By the end of the workshop, you will be able to:
 
 - Apply the API data flow: request → JSON → DataFrame → Streamlit UI
-
-- Retrieve results from an API in multiple batches by using the limit (how many records per request) and offset (where to start in the result list) parameters
-
-- Use .env configuration (BASE_URL, TOKEN, TIMEOUT)
 
 - Add filters and CSV download functionality
 
@@ -61,37 +57,6 @@ python -m venv .venv
 ```bash
 pip install -r requirements.txt
 ```
-
-### Step 4 — Create .env file
-
-Create a `.env` file in the project root with the following content:
-
-```
-
-# Production public base URL
-FOURTU_BASE_URL=https://data.4tu.nl
-
-# Request tuning
-FOURTU_TIMEOUT=30
-
-# Dashboard defaults
-UC01_PUBLISHED_SINCE=2025-01-01
-UC01_PAGE_SIZE=100
-UC01_MAX_PAGES=3
-
-# Optional: only needed if you encounter import errors when running from the repo root 
-PYTHONPATH=.
-
-# Optional : If you already have a 4TU API token, you may add:
-
-FOURTU_TOKEN=your_token_here
-
-```
-
-- Production base URL: https://data.4tu.nl
-- Authentication is optional for public monitoring.
-
-
 
 
 ## 🛠 Prerequisites
