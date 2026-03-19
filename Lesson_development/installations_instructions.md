@@ -41,7 +41,8 @@ Activate the environment:
 ### macOS / Linux
 
 ```bash
-source api-dashboard-env/bin/activate
+source api-dashboard-env/bin/activatels -a
+
 ```
 
 ### Windows (Git Bash)

@@ -18,4 +18,4 @@
         - Add a small visualization 
 6. Show them the dashboard with more features (filtering by datasets/software) and caching with the `lesson_complex_code.py`
 7. Go back to presentation and talk about how they can serve their dashboard online
-8. Finish/ Wrap up 
+8. Finish/ Wrap up , fill the feedback in https://hackmd.io/@0Gb1si3JS7ebf7pZDO7CqQ/SkwMo_Lqbx
