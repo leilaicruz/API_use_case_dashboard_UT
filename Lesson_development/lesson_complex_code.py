@@ -116,6 +116,8 @@ def to_dataframe(
                 "group_id": gid,
                 "group_name": group_map.get(gid, "Unknown"),
                 "doi": a.get("doi"),
+                "uuid": a.get("uuid"),
+                "url": a.get("url"),
             }
         )
     df = pd.DataFrame(rows)
