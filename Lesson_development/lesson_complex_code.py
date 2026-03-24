@@ -19,7 +19,7 @@ TIMEOUT = int(os.getenv("FOURTU_TIMEOUT", "30"))
 TOKEN = os.getenv("FOURTU_TOKEN", "").strip()  # optional for public monitoring
 
 DEFAULT_PUBLISHED_SINCE = os.getenv("UC01_PUBLISHED_SINCE", "2025-01-01")
-DEFAULT_PAGE_SIZE = int(os.getenv("UC01_PAGE_SIZE", "11687"))
+DEFAULT_PAGE_SIZE = int(os.getenv("UC01_PAGE_SIZE", "11754"))
 DEFAULT_MAX_PAGES = int(os.getenv("UC01_MAX_PAGES", "3"))
 
 
@@ -144,7 +144,7 @@ with st.sidebar:
     item_type = 3 if item_type_label.startswith("Dataset") else 9
 
     published_since = st.text_input("published_since (YYYY-MM-DD)", value=DEFAULT_PUBLISHED_SINCE)
-    page_size = st.number_input("page_size", min_value=10, max_value=11687, value=DEFAULT_PAGE_SIZE, step=10)
+    page_size = st.number_input("page_size", min_value=10, max_value=11754, value=DEFAULT_PAGE_SIZE, step=10)
     max_pages = st.number_input("max_pages", min_value=1, max_value=50, value=DEFAULT_MAX_PAGES, step=1)
 
     st.caption(f"Effective item_type = {item_type}")
